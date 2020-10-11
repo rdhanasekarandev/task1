@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="category"
+            type="com.thamizhi.task1.data.Category" />
+
+        <variable
+            name="onClick"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="imageUrl"
+            type="String" />
+    </data>
+    <LinearLayout
+        android:onClick="@{onClick}"
+        android:tag="@{category}"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="No cabs"
+            android:textColor="#000000"
+            android:textSize="13dp" />
+        <ImageView
+            android:padding="10dp"
+            android:background="@{category.click ? @drawable/normal : @drawable/selected}"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:scaleType="center"
+            app:imageUrl="@{imageUrl}"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@{category.name}"
+            android:textColor="#000000"
+            android:textSize="10dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@{category.price}"
+            android:textColor="#000000"
+            android:textSize="10dp" />
+    </LinearLayout>
+</layout>

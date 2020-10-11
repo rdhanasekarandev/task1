@@ -1,0 +1,18 @@
+query getCategories {
+ getCategories {
+   result {
+     id
+     categoryName
+     categoryImage
+     categoryMarkerImage
+     unitPrice
+     basePrice
+    minutePrice
+
+     isActive
+     currency
+   }
+   status
+   errorMessage
+ }
+}
